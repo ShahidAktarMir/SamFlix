@@ -3,12 +3,14 @@ import YouTube_ICONS from "../CustomAPI";
 
 import { useDispatch } from "react-redux";
 import { toggleMenu } from "../Utils/navSlice";
+import { MenuR } from "../Utils/navSliceR";
 
 const Header = () => {
   const { HeadersSection } = YouTube_ICONS;
   const dispatch = useDispatch();
   const toggleMenuHandeler = () => {
     dispatch(toggleMenu());
+    dispatch(MenuR());
   };
   return (
     <div className="flex justify-between">
