@@ -1,4 +1,4 @@
-const VideoCard = ({ items, index }) => {
+const VideoCard = ({ items }) => {
   const { snippet, statistics } = items;
   const IST = new Date();
 
@@ -59,7 +59,7 @@ const VideoCard = ({ items, index }) => {
             </p>
           ) : (
             <p className="font-normal text-gray-600 text-sm">
-              {IST.getDate() - parseInt(snippet.publishedAt[8] + [9])} Days ago
+              {parseInt(snippet.publishedAt[8] + [9]) - IST.getDate()} Days ago
             </p>
           )}
         </div>

@@ -7,17 +7,13 @@ import { Link } from "react-router-dom";
 const Sidebar = () => {
   const { GuideSection } = YouTube_ICONS;
   const isMenu = useSelector((store) => store.nav.isMenu);
-  const isMenuR = useSelector((store) => store.navR.isMenuR);
 
-  return isMenu && isMenuR ? (
+  return isMenu ? (
     <div className="w-[230px] h-full overflow-visible mt-2 px-2 font-normal bg-gray-50 ">
       <ul className="p-1">
         {GuideSection.map((menu) => (
-          <Link to={menu.name}>
-            <li
-              key={menu.id}
-              className="hover:bg-gray-200 bg-gray-50 h-[42px] w-[206px]  p-[12px] flex items-center mb-2  focus:font-semibold text-center rounded-xl cursor-pointer hover:stroke-gray-900"
-            >
+          <Link to={menu.name} key={menu.id}>
+            <li className="hover:bg-gray-200 bg-gray-50 h-[42px] w-[206px]  p-[12px] flex items-center mb-2  focus:font-semibold text-center rounded-xl cursor-pointer hover:stroke-gray-900">
               <svg
                 height={menu.svg.height}
                 viewBox={menu.svg.viewBox}
@@ -32,15 +28,12 @@ const Sidebar = () => {
       </ul>
     </div>
   ) : (
-    <ul className="bg-gray-50 ml-[6px] mt-[6px] ">
+    <ul className="bg-gray-50 ml-[6px] mt-[6px] w-[70px] ">
       {GuideSection.map(
         (menu, index) =>
           index < 4 && (
-            <Link to={menu.name}>
-              <li
-                key={menu.id}
-                className="hover:bg-gray-200 flex flex-col items-center py-[15px]  w-[60px] rounded-md cursor-pointer hover:stroke-gray-900 "
-              >
+            <Link to={menu.name} key={menu.id}>
+              <li className="hover:bg-gray-200 flex flex-col items-center py-[15px]  w-[60px] rounded-md cursor-pointer hover:stroke-gray-900 ">
                 <svg
                   className="mb-1"
                   height={menu.svg.height}

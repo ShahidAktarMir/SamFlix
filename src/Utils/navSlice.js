@@ -12,7 +12,10 @@ const navSlice = createSlice({
     collapsMenu: (state) => {
       state.isMenu = false;
     },
+    expandMenu: (state) => {
+      state.isMenu = true;
+    },
   },
 });
-export const { toggleMenu, collapsMenu, collapsMenuOff } = navSlice.actions;
+export const { toggleMenu, collapsMenu, expandMenu } = navSlice.actions;
 export default navSlice.reducer;

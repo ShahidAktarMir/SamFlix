@@ -1,12 +1,12 @@
+import countrySlice from "./countrySlice";
 import navSlice from "./navSlice";
-import navSliceR from "./navSliceR";
 
 const { configureStore } = require("@reduxjs/toolkit");
 
 const Store = configureStore({
   reducer: {
     nav: navSlice,
-    navR: navSliceR,
+    country: countrySlice,
   },
 });
 export default Store;
